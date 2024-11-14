@@ -6,7 +6,13 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  root "movies#home"
+  root "lists#home"
 
-  resources :movies
+  resources :lists, only: ["index", "show", "new", "create"] do
+    resources :movies, only: ["index", "show"]
+    resources :bookmarks, only: ["new", "create"]
+  end
+  resources :movies, only: ["destroy"] # TODO : methode destroy non codée pour l'instant
+
+  resources :bookmarks, only: ["destroy"]
 end

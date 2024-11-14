@@ -11,6 +11,17 @@
   </head>
 
   <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container justify-content-between">
+        <%= link_to root_path, :class=> "icone-homepage" do %>
+          <i class="fa-solid fa-ticket" style="color: #000000;" target="_blank"></i>
+        <% end %>
+        <div class="buttons">
+          <%= link_to "Add a list", new_list_path, class: "btn btn-primary" %>
+          <%= link_to "See your lists", lists_path, class: "btn btn-primary" %>
+        </div>
+      </div>
+    </nav>
     <div class="container">
       <%= yield %>
     </div>

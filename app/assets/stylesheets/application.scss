@@ -10,3 +10,31 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+// a trier dans des fichiers CSS plus tard
+body {
+  background-color: transparent;
+}
+
+// HOME PAGE
+#home-page-banner {
+  background-image: asset-url("cinema.png");
+  background-size: cover;
+  height: 500px;
+  text-align: center;
+  align-content: center;
+}
+
+//LISTS INDEX
+.card-movie-body {
+  background-image: asset-url("cinema_ticket.png");
+  background-size: cover;
+}
+
+// list SHOW
+#list-show-banner {
+  background-image: asset-url("cinema.png");
+  background-size: cover;
+  height: 500px;
+}

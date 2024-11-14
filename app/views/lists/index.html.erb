@@ -1,0 +1,17 @@
+<div class="lists">
+
+  <h1>All your lists (<%= @lists.size %>)</h1>
+
+  <div class="list-list row gap-3 p-20">
+
+      <% @lists.each do |list| %>
+
+        <div class="card-movie-body m-10 col-2 p-2" style="width: 18rem;">
+            <h5 class="card-title text-center text-white"><%= list.name %></h5>
+            <%= link_to "More info", list_path(list.id), class: "btn btn-primary"%>
+            <%# <%= link_to "Delete this list", list_path(list.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-primary" %>
+        </div>
+
+      <% end %>
+  </div>
+</div>

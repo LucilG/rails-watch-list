@@ -1,0 +1,32 @@
+<div class="justify-content-center">
+
+  <div id="list-show-banner align-content-center">
+    <p class="btn btn-secondary justify-content-right"><%= @movies.size %></p>
+    <h1 class="justify-content-center"><%= @list.name %></h1>
+  </div>
+
+  <div class="list-show-add-movie">
+    <%= link_to "Add a movie in this list", new_list_bookmark_path(@list), class: "btn btn-primary" %>
+  </div>
+
+  <div class="list-list row gap-3 p-20">
+
+        <% @movies.each do |movie| %>
+          <div class="card" style="width: 18rem;">
+            <%= image_tag 'cinema' %>
+            <div class="card-body justify-content-center">
+              <h3 class="card-title"><%= movie.title %></h3>
+              <div class="movie-rating d-flex flex-row align-content-center">
+                <i class="fa-solid fa-star" style="color: #FFD43B;"></i>
+                <p><%= movie.rating %></p>
+              </div>
+              <p class="card-text"><%= movie.overview %></p>
+              <% bookmark = Bookmark.find { |b| ( (@list.id == b.list.id) && ( movie.id == b.movie.id) )} %>
+              <h5 class="card-text"><%= bookmark.comment %></h5>
+              <%= link_to "Remove from list", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-primary" %>
+            </div>
+          </div>
+        <% end %>
+    </div>
+
+</div>
