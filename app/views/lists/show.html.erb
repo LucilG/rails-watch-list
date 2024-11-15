@@ -1,13 +1,13 @@
 <div class="justify-content-center">
 
   <div id="list-show-banner align-content-center">
-    <p class="btn btn-secondary justify-content-right"><%= @movies.size %></p>
+    <p class="btn btn-secondary justify-content-right"><%= @movies.size %> movies in this list</p>
     <h1 class="justify-content-center"><%= @list.name %></h1>
   </div>
 
-  <div class="list-show-add-movie">
-    <%= link_to "Add a movie in this list", new_list_bookmark_path(@list), class: "btn btn-primary" %>
-  </div>
+  <%# <div class="list-show-add-movie"> %>
+    <%# <%= link_to "Add a movie in this list", new_list_bookmark_path(@list), class: "btn btn-primary" %>
+  <%# </div> %>
 
   <div class="list-list row gap-3 p-20">
 
