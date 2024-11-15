@@ -27,6 +27,7 @@ List.create!(name: "Horror")
 List.create!(name: "Sci-Fi")
 List.create!(name: "Fantasy")
 List.create!(name: "Drama")
+# List.all[0].photo.attach("TODO_voir la doc")
 
 # BOOKMARK SEED
 Bookmark.create!(comment: "recommended by John", movie: Movie.all[2], list: List.all[0])

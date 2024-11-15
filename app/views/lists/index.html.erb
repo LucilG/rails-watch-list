@@ -6,7 +6,8 @@
 
       <% @lists.each do |list| %>
 
-        <div class="card-movie-body m-10 col-2 p-2" style="width: 18rem;">
+        <div class="card-movie-body m-10 col-2 p-2"
+          style="width: 18rem; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= list.photo.attached? ? (cl_image_path list.photo.key, height: 300, crop: :fill) : "https://res.cloudinary.com/dbehhonie/image/upload/v1731671866/cld-sample-3.jpg"%>')">
             <h5 class="card-title text-center text-white"><%= list.name %></h5>
             <%= link_to "More info", list_path(list.id), class: "btn btn-primary"%>
             <%# <%= link_to "Delete this list", list_path(list.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-primary" %>
